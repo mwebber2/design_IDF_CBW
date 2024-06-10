@@ -336,61 +336,63 @@ for c in range(len(county_centroids)):
     perc_diff_85long_master.append(perc_diff_85long)
     
     #plot atlas median and confidence intervals compared to projected precip for each county
-    plt.figure()
-    plt.plot(atlas_median, label = "Current median", color = "k")
-    plt.plot(atlas_upper, label = "Upper bound", color = "k", linestyle = "dashed")
-    plt.plot(atlas_lower, label = "Lower bound", color = "k", linestyle = "dashed")
-    plt.plot(output[1], label = "RCP 4.5_2020-2070", color = "limegreen") #RCP 4.5
-    plt.fill_between(range(6), list(output_min[1]), list(output_max[0]), color = "limegreen", alpha = 0.1, label = "2020-2070 range")
-    plt.plot(output[3], label = "RCP 4.5_2050-2100", color = "darkgreen") #RCP 4.5
-    plt.fill_between(range(6), list(output_min[3]), list(output_max[1]), color = "darkgreen", alpha = 0.1, label = "2050-2100 range")
-    plt.legend(loc = "upper left")
-    plt.title("24-hr DDF curve: " + grid_test[:-3] + ", " + grid_test[-2:])
-    plt.xticks(range(6), RP_list)
-    plt.xlabel("Return Period")
-    plt.ylabel("Depth (mm)")
-    plt.savefig(path_to_save_graphs + grid_test + "RCP45.png")
-    plt.close()
+    if c == 7:
+        plt.figure()
+        plt.plot(atlas_median, label = "Current median", color = "k")
+        plt.plot(atlas_upper, label = "Upper bound", color = "k", linestyle = "dashed")
+        plt.plot(atlas_lower, label = "Lower bound", color = "k", linestyle = "dashed")
+        plt.plot(output[1], label = "RCP 4.5_2020-2070", color = "limegreen") #RCP 4.5
+        plt.fill_between(range(6), list(output_min[1]), list(output_max[0]), color = "limegreen", alpha = 0.1, label = "2020-2070 range")
+        plt.plot(output[3], label = "RCP 4.5_2050-2100", color = "darkgreen") #RCP 4.5
+        plt.fill_between(range(6), list(output_min[3]), list(output_max[1]), color = "darkgreen", alpha = 0.1, label = "2050-2100 range")
+        plt.legend(loc = "upper left")
+        plt.title("24-hr DDF curve: " + grid_test[:-3] + ", " + grid_test[-2:])
+        plt.xticks(range(6), RP_list)
+        plt.xlabel("Return Period")
+        plt.ylabel("Depth (mm)")
+        plt.savefig(path_to_save_graphs + grid_test + "RCP45.png")
+        plt.close()
     
     #plot percentile depths with atlas14 upper lower and median as horizontal lines
     #graph for each RCP
-    for o in range(len(outputcf)):
-        if o < 2: #RCP 4.5
-            col = 'green'
-        else: col = 'blue' #RCP 8.5
-        fig, axs = plt.subplots(6, 1, figsize = (12, 8), sharex = True)
-        for i in range(len(cf_2)):
-            #axs[i].vlines(output_min[o][i], 0, 1, color = 'white', linestyle = "dotted")
-            axs[i].vlines(output[o][i], 0, 1, color = col, label = "projected median")
-            axs[i].vlines(output_max[o][i], 0, 1, color = 'white', linestyle = "dotted")
-            #axs[i].vlines(atlas_lower[i], 0, 1, color = 'white', linestyle = "dotted")
-            axs[i].vlines(atlas_median[i], 0, 1, "k", label = "current median")
-            axs[i].vlines(atlas_upper[i], 0, 1, color = 'white', linestyle = "dotted")
-            axs[i].axvspan(output_min[o][i], output_max[o][i], color = col, alpha = 0.075, label = "projected uncertainty")
-            axs[i].axvspan(atlas_median[i], atlas_upper[i], color = "k", alpha = 0.1, label = "current confidence interval")
-            axs[i].set_ylabel(RP_list[i], fontsize = 14)
-            axs[i].tick_params(
-                axis='y',          # changes apply to the x-axis
-                which='both',      # both major and minor ticks are affected
-                left=False,      # ticks along the bottom edge are off
-                right=False,         # ticks along the top edge are off
-                labelleft=False)    # labels on the left are off
-            axs[i].tick_params(
-                axis = 'x',
-                labelsize = 14)
-            if i < 5:
-                axs[i].vlines(atlas_median[i+1], 0, 1, color = "darkorange", lw = 2, linestyle = "dashed", label = "increased RP")
-                #include the CI #TODO
-                #axs[i].vlines(atlas_lower[i+1], 0, 1, color = 'white', linestyle = "dotted")
-                axs[i].vlines(atlas_upper[i+1], 0, 1, color = 'white', linestyle = "dotted")
-                axs[i].axvspan(atlas_median[i+1], atlas_upper[i+1], color = "darkorange", alpha = 0.075, label = "increased RP confidence interval")
-        plt.xlabel("Depth (mm)", fontsize = 14)
-        axs[1].legend(fontsize = 14, bbox_to_anchor=(1, 2.15))
-        #plt.ylabel("Probability distrbution from available future simulations")
-        titlestring = "RCP " + RCP[o][3] + "." + RCP[o][4] + " " + RCP[o][-9:] #e.g. rcp45_2020-2070
-        axs[0].set_title(grid_test[:-3] + ", " + grid_test[-2:] + " (" + titlestring + ")", fontsize = 16)
-        plt.savefig(path_to_save_graphs + r"ridgeline_like_plots/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
-        plt.close()
+    if c == 7:
+        for o in range(len(outputcf)):
+            if o < 2: #RCP 4.5
+                col = 'green'
+            else: col = 'blue' #RCP 8.5
+            fig, axs = plt.subplots(6, 1, figsize = (12, 8), sharex = True)
+            for i in range(len(cf_2)):
+                #axs[i].vlines(output_min[o][i], 0, 1, color = 'white', linestyle = "dotted")
+                axs[i].vlines(output[o][i], 0, 1, color = col, label = "projected median")
+                axs[i].vlines(output_max[o][i], 0, 1, color = 'white', linestyle = "dotted")
+                #axs[i].vlines(atlas_lower[i], 0, 1, color = 'white', linestyle = "dotted")
+                axs[i].vlines(atlas_median[i], 0, 1, "k", label = "current median")
+                axs[i].vlines(atlas_upper[i], 0, 1, color = 'white', linestyle = "dotted")
+                axs[i].axvspan(output_min[o][i], output_max[o][i], color = col, alpha = 0.075, label = "projected uncertainty")
+                axs[i].axvspan(atlas_median[i], atlas_upper[i], color = "k", alpha = 0.1, label = "current confidence interval")
+                axs[i].set_ylabel(RP_list[i], fontsize = 14)
+                axs[i].tick_params(
+                    axis='y',          # changes apply to the x-axis
+                    which='both',      # both major and minor ticks are affected
+                    left=False,      # ticks along the bottom edge are off
+                    right=False,         # ticks along the top edge are off
+                    labelleft=False)    # labels on the left are off
+                axs[i].tick_params(
+                    axis = 'x',
+                    labelsize = 14)
+                if i < 5:
+                    axs[i].vlines(atlas_median[i+1], 0, 1, color = "darkorange", lw = 2, linestyle = "dashed", label = "increased RP")
+                    #include the CI #TODO
+                    #axs[i].vlines(atlas_lower[i+1], 0, 1, color = 'white', linestyle = "dotted")
+                    axs[i].vlines(atlas_upper[i+1], 0, 1, color = 'white', linestyle = "dotted")
+                    axs[i].axvspan(atlas_median[i+1], atlas_upper[i+1], color = "darkorange", alpha = 0.075, label = "increased RP confidence interval")
+            plt.xlabel("Depth (mm)", fontsize = 14)
+            axs[1].legend(fontsize = 14, bbox_to_anchor=(1, 2.15))
+            #plt.ylabel("Probability distrbution from available future simulations")
+            titlestring = "RCP " + RCP[o][3] + "." + RCP[o][4] + " " + RCP[o][-9:] #e.g. rcp45_2020-2070
+            axs[0].set_title(grid_test[:-3] + ", " + grid_test[-2:] + " (" + titlestring + ")", fontsize = 16)
+            plt.savefig(path_to_save_graphs + r"plotsforeachscenario/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
+            plt.close()
 
 #ridgeline with depths for all counties
 #take output_45_short and output_45_long, y = 3 from each county for 25yr, #min and max as well
@@ -431,7 +433,7 @@ output_ridgeline = pd.DataFrame(
      "Atlas14_upRP_median": output_ridgeline_atlasRPup,
      "Atlas14_upRP_upper": output_ridgeline_atlasRPup_upper
      })
-
+r'''
 def mainplot(output_ridgeline, title, rcp_plot):
     o_r = output_ridgeline.sort_values(by=[rcp_plot], ascending = False).reset_index()
     plt.figure(figsize = (12, 18)) 
@@ -481,7 +483,8 @@ plt.xticks(fontsize=16)
 plt.ylabel("Counties", fontsize = 16)
 plt.yticks(fontsize=16)
 plt.savefig(path_to_save_graphs + r"ridgeline_like_plots/ridgeline_fouralternatives+bar.png", bbox_inches = "tight")
-#plt.close()
+plt.close()
+r'''
 
 #%%
 #method rearranges a list of lists for counties[rps] i.e. 321 lists with each list 6 items
