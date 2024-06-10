@@ -122,13 +122,13 @@ import IDFcurves_atlasupRP #strategy 3
 import IDFcurves_atlasupRPCI #strategy 4
 import IDFcurves_maps #maps and figures comparing four strategies
 
-#import IDFcurves_atlasmedian_percentiles #SI figures for strategy 1
-#import IDFcurves_atlasCI_percentiles #SI figures for strategy 2
+import IDFcurves_atlasmedian_percentiles #SI figures for strategy 1
+import IDFcurves_atlasCI_percentiles #SI figures for strategy 2
 
-t1 = time.perf_counter() #seconds
+#t1 = time.perf_counter() #seconds
 
-totaltime_sec = t1-t0 #3435.7 #2484.3
-totaltime_min = totaltime_sec/60 #57.26 #41.41
-totaltime_hr = totaltime_sec/3600 #0.954 #0.69
+#totaltime_sec = t1-t0 #3435.7 #2484.3
+#totaltime_min = totaltime_sec/60 #57.26 #41.41
+#totaltime_hr = totaltime_sec/3600 #0.954 #0.69
 
 
