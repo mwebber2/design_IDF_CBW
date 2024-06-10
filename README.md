@@ -45,6 +45,7 @@ Tables and other figures representing all counties: as generated in each strateg
 	- four plots representing potential future day precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long).
 
 Figures representing each county: TBD
+- example for Allegheny County
 
 ## Example
 
@@ -57,6 +58,12 @@ Example of figures generated as output (for Strategy 1: designing to Atlas14 med
 ![Example boxplot fractional difference](atlasmedian/RCP45_long.png)
 
 ![Example boxplot climate factor of safety](atlasmedian/RCP45_long_FS.png)
+
+Example of figures generated as ouput for individual counties:
+
+![Example Allehgeny County](individualcounties/Allegheny_PARCP45.png)
+
+![Example Allegheny County single scenario](individualcounties/plotsforeachscenario/Allegheny_PA_rcp45_2050-2100.png)
 
 
 ## Acknowledgements
