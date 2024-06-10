@@ -22,14 +22,14 @@ scipy >= 1.7.1
 
 ### Notes for running scripts
 Each Python script can be run independently, or all of the scripts can be run from `IDFcurves_main.py`.
-Some of the outputs from `IDFcurves_atlasmedian.py` have not yet been uploaded to the repository.
 
 ## Output
 General files: in the main folder
+- Folder with NOAA Atlas14 webscraped data (`atlas14`)
 - Table with metadata about each county (`CBP_countycentroids.csv`).
-- Map representing the study area (`CBWmap.png`) 
+- Map representing the study area (`CBWmap.png`)
 
-Maps: as generated in the maps folder.
+Maps: as generated in the `maps` folder.
 - Map of the US with an inset of the study area (`CONUSmap+CBW+inset.png`)
 - Choropleth maps showing counties in gradated colors if climate factor of safety is greater than 1.0.
 
@@ -44,9 +44,9 @@ Tables and other figures representing all counties: as generated in each strateg
 - Boxplots representing stormwater climate factors of safety for all 321 counties, for each return period. Each strategy has:
 	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long).
 
-Figures representing each county (example for Allegheny County)
+Figures representing each county (example for Allegheny County): generated in the `individualcounties` folder:
 - IDF curves for RCP 4.5 2020-2070 and 2050-2100 with uncertainty bands for projected precipitation
-- figures for each of the four potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 and 2050-2100.
+- four figures comparing precipitation depth for each return period for Atlas 14 to each of the four potential future precipitation depths (for RCP 4.5 and RCP 8.5, for 2020-2070 and 2050-2100).
 
 ## Example
 
