@@ -29,7 +29,6 @@ General files: as generated in the main folder (`IDFcurve_code`)
 - Map representing the study area (`CBWmap.png`)
 
 Maps: as generated in the maps folder.
-- Single color maps showing counties in color if climate factor of safety is greater than 1.0.
 - Choropleth maps showing counties in gradated colors if climate factor of safety is greater than 1.0.
 
 Tables and other figures: as generated in each strategy's folder.
@@ -50,13 +49,11 @@ After cloning this repository, the outputs described above will be available in 
 
 Example of figures generated as output (for Strategy 1: designing to Atlas14 median precipitation depth):
 
-![Example single color map](25yr_protectionmap_RCP45.png)
+![Example choropleth map](maps/25yr_fractionmap+diff_RCP45.png)
 
-![Example choropleth map](25yr_fractionmap+diff_RCP45.png)
+![Example boxplot fractional difference](atlasmedian/RCP45_long.png)
 
-![Example boxplot fractional difference](RCP45_long.png)
-
-![Example boxplot climate factor of safety](RCP45_long_FS.png)
+![Example boxplot climate factor of safety](atlasmedian/RCP45_long_FS.png)
 
 
 ### Acknowledgements
