@@ -4,7 +4,7 @@ Created on Sun May 19 08:52:22 2024
 
 @author: webbe
 
-This file imports .py files for IDF curves
+This file imports and runs .py files for IDF curves
 
 
 """
@@ -109,14 +109,13 @@ geoid_list = []
 for i in range(len(county_centroids)):
     geoid_list.append(str(county_centroids['GEOID'][i]))
 CBWcounties = allUScounties[allUScounties['GEOID'].isin(geoid_list)]
-#fig, ax = plt.subplots(1, figsize=(10, 6))
 CBWcounties.plot()
 plt.savefig(path_main + "CBWmap.png")
 plt.close()
 
 #%% main files
 
-#import IDFcurves_checkPOR #TODO does not generate any figures?
+#import IDFcurves_checkPOR #does not generate any figures?
 import IDFcurves_atlasmedian #strategy 1
 import IDFcurves_atlasCI #strategy 2
 import IDFcurves_atlasupRP #strategy 3
