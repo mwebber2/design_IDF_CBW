@@ -57,6 +57,6 @@ Example of figures generated as output (for Strategy 1: designing to Atlas14 med
 ![Example boxplot climate factor of safety](atlasmedian/RCP45_long_FS.png)
 
 
-### Acknowledgements
+## Acknowledgements
 
 We are grateful to the Mid-Atlantic Climate Adaptation Partnership (CAP) team and other stakeholders for making the data publicly available.
