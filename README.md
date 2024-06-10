@@ -48,11 +48,15 @@ Figures representing each county (example for Allegheny County): generated in th
 - IDF curves for RCP 4.5 2020-2070 and 2050-2100 with uncertainty bands for projected precipitation
 - four figures comparing precipitation depth for each return period for Atlas 14 to each of the four potential future precipitation depths (for RCP 4.5 and RCP 8.5, for 2020-2070 and 2050-2100).
 
+Output representing uncertainty associated with potential future precipitation depths: for strategy 1 (`atlasmedian_percentiles`) and strategy 2 (`atlasCI_percentiles`):
+- maps: four figures comparing precipitation depth for each return period for Atlas 14 to percentiles for each of the four potential future precipitation depths (for RCP 4.5 and RCP 8.5, for 2020-2070 and 2050-2100).
+- csv files: representing precipitation depth associated with each strategy. Output file format is csv. The first column being the counties in the study area and several other columns for different return periods (2-yr, 5-yr, 10-yr, 25-yr, 50-yr, 100-yr). Each strategy has files reprsenting each of the potential future precipitation scenarios (for RCP 4.5 and RCP 8.5, for 2020-2070 and 2050-2100) for each of the percentiles (min, 10th, 25th, 50th, 70th, 90th, max).
+
 ## Example
 
-After cloning this repository, the outputs described above will be available in the folders representing each strategy, or in the general map folder
+After cloning this repository, the outputs described above will be available in the folders representing each strategy, or in the `maps` folder.
 
-Example of figures generated as output (for Strategy 1: designing to Atlas14 median precipitation depth):
+### Examples of figures generated as output (for Strategy 1: designing to Atlas14 median precipitation depth):
 
 ![Example choropleth map](maps/25yr_fractionmap+diff_RCP45.png)
 
@@ -60,12 +64,15 @@ Example of figures generated as output (for Strategy 1: designing to Atlas14 med
 
 ![Example boxplot climate factor of safety](atlasmedian/RCP45_long_FS.png)
 
-Example of figures generated as ouput for individual counties:
+### Examples of figures generated as ouput for individual counties:
 
 ![Example Allehgeny County](individualcounties/Allegheny_PARCP45.png)
 
 ![Example Allegheny County single scenario](individualcounties/plotsforeachscenario/Allegheny_PA_rcp45_2050-2100.png)
 
+### Examples of figures generated as output for uncertainty analysis:
+
+![Example percentile map](atlasCI_percentiles/percentilemap_RCP45_2020-2070.png)
 
 ## Acknowledgements
 
