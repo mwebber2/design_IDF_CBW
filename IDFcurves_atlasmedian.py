@@ -363,13 +363,13 @@ for c in range(len(county_centroids)):
             fig, axs = plt.subplots(6, 1, figsize = (12, 8), sharex = True)
             for i in range(len(cf_2)):
                 #axs[i].vlines(output_min[o][i], 0, 1, color = 'white', linestyle = "dotted")
-                axs[i].vlines(output[o][i], 0, 1, color = col, label = "projected median")
+                h1 = axs[i].vlines(output[o][i], 0, 1, color = col, label = "projected median")
                 axs[i].vlines(output_max[o][i], 0, 1, color = 'white', linestyle = "dotted")
                 #axs[i].vlines(atlas_lower[i], 0, 1, color = 'white', linestyle = "dotted")
-                axs[i].vlines(atlas_median[i], 0, 1, "k", label = "current median")
+                h2 = axs[i].vlines(atlas_median[i], 0, 1, "k", label = "current median")
                 axs[i].vlines(atlas_upper[i], 0, 1, color = 'white', linestyle = "dotted")
-                axs[i].axvspan(output_min[o][i], output_max[o][i], color = col, alpha = 0.075, label = "projected uncertainty")
-                axs[i].axvspan(atlas_median[i], atlas_upper[i], color = "k", alpha = 0.1, label = "current confidence interval")
+                h3 = axs[i].axvspan(output_min[o][i], output_max[o][i], color = col, alpha = 0.075, label = "projected uncertainty range")
+                h4 = axs[i].axvspan(atlas_median[i], atlas_upper[i], color = "k", alpha = 0.1, label = "current upper confidence interval")
                 axs[i].set_ylabel(RP_list[i], fontsize = 14)
                 axs[i].tick_params(
                     axis='y',          # changes apply to the x-axis
@@ -381,16 +381,22 @@ for c in range(len(county_centroids)):
                     axis = 'x',
                     labelsize = 14)
                 if i < 5:
-                    axs[i].vlines(atlas_median[i+1], 0, 1, color = "darkorange", lw = 2, linestyle = "dashed", label = "increased RP")
-                    #include the CI #TODO
+                    h5 = axs[i].vlines(atlas_median[i+1], 0, 1, color = "darkorange", lw = 2, linestyle = "dashed", label = "increased RP")
                     #axs[i].vlines(atlas_lower[i+1], 0, 1, color = 'white', linestyle = "dotted")
-                    axs[i].vlines(atlas_upper[i+1], 0, 1, color = 'white', linestyle = "dotted")
-                    axs[i].axvspan(atlas_median[i+1], atlas_upper[i+1], color = "darkorange", alpha = 0.075, label = "increased RP confidence interval")
+                    axs[i].vlines(atlas_upper[i+1], 0, 1, color = 'bisque', linestyle = "dotted") #instead of white
+                    h6 = axs[i].axvspan(atlas_median[i+1], atlas_upper[i+1], color = "darkorange", alpha = 0.075, label = "increased RP upper confidence interval")
             plt.xlabel("Depth (mm)", fontsize = 14)
-            axs[1].legend(fontsize = 14, bbox_to_anchor=(1, 2.15))
+            #axs[1].legend(fontsize = 14, bbox_to_anchor=(1, 2.15))
+            #handles, labels = plt.gca().get_legend_handles_labels()
+            handles = [h2, h4, h5, h6, h1, h3]
+            labels = ["current median", "current upper confidence interval", "increased RP", "increased RP upper confidence interval", "projected median", "projected uncertainty range"]
+            order = [0, 1, 2, 3, 4, 5]
+            axs[1].legend([handles[idx] for idx in order],[labels[idx] for idx in order],
+                          fontsize = 14, bbox_to_anchor=(1, 2.15))
             #plt.ylabel("Probability distrbution from available future simulations")
             titlestring = "RCP " + RCP[o][3] + "." + RCP[o][4] + " " + RCP[o][-9:] #e.g. rcp45_2020-2070
             axs[0].set_title(grid_test[:-3] + ", " + grid_test[-2:] + " (" + titlestring + ")", fontsize = 16)
+            #plt.savefig(path_to_save_graphs + r"ridgeline_like_plots/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
             plt.savefig(path_to_save_graphs + r"plotsforeachscenario/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
             plt.close()
 
