@@ -514,15 +514,15 @@ diff_allRP_protect_85long = resultsbycountyandRP(protect_85long_master)
 
 #export these files for future mapping
 #protected 0 vs 1
-pd.DataFrame(diff_allRP_protectmin).T.to_csv(path_to_save + "output_protect_min.csv")
-pd.DataFrame(diff_allRP_protectmax).T.to_csv(path_to_save + "output_protect_max.csv")
-pd.DataFrame(diff_allRP_protect_45short).T.to_csv(path_to_save + "output_protect_45short.csv")
-pd.DataFrame(diff_allRP_protect_45long).T.to_csv(path_to_save + "output_protect_45long.csv")
-pd.DataFrame(diff_allRP_protect_85short).T.to_csv(path_to_save + "output_protect_85short.csv")
-pd.DataFrame(diff_allRP_protect_85long).T.to_csv(path_to_save + "output_protect_85long.csv")
+#pd.DataFrame(diff_allRP_protectmin).T.to_csv(path_to_save + "output_protect_min.csv")
+#pd.DataFrame(diff_allRP_protectmax).T.to_csv(path_to_save + "output_protect_max.csv")
+#pd.DataFrame(diff_allRP_protect_45short).T.to_csv(path_to_save + "output_protect_45short.csv")
+#pd.DataFrame(diff_allRP_protect_45long).T.to_csv(path_to_save + "output_protect_45long.csv")
+#pd.DataFrame(diff_allRP_protect_85short).T.to_csv(path_to_save + "output_protect_85short.csv")
+#pd.DataFrame(diff_allRP_protect_85long).T.to_csv(path_to_save + "output_protect_85long.csv")
 #percentage protection/fracitonal difference
-pd.DataFrame(diff_allRP_percmin_all).T.to_csv(path_to_save + "output_percmin.csv")
-pd.DataFrame(diff_allRP_percmax_all).T.to_csv(path_to_save + "output_percmax.csv")
+#pd.DataFrame(diff_allRP_percmin_all).T.to_csv(path_to_save + "output_percmin.csv")
+#pd.DataFrame(diff_allRP_percmax_all).T.to_csv(path_to_save + "output_percmax.csv")
 pd.DataFrame(diff_allRP_percmin_RCP45_short).T.to_csv(path_to_save + "output_frac_45short.csv")
 pd.DataFrame(diff_allRP_percmin_RCP45_long).T.to_csv(path_to_save + "output_frac_45long.csv")
 pd.DataFrame(diff_allRP_percmin_RCP85_short).T.to_csv(path_to_save + "output_frac_85short.csv")
