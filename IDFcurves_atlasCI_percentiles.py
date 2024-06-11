@@ -534,9 +534,14 @@ def multiplemaps(listname, titletosave): #with shared legend
         #CBWcounties.plot(column = variable, cmap=plt.cm.get_cmap(newblue), vmin = vmin, vmax = vmax, linewidth=0.8, ax=axs[i], edgecolor='0.8', categorical=False)#, legend = True)
         CBWcounties.plot(facecolor="white", hatch="XX", ax = axs[i])#, edgecolor = '0.3')
         #if i == (len(RP_list)-1): #or i == 2:
-        if i == 2:
+        #if i == 2:
+        #    CBWcounties.plot(column = variable, cmap=plt.cm.get_cmap(cmap_curr), linewidth=0.8, ax=axs[i], edgecolor='0.8', categorical=True,
+        #                     legend = True, legend_kwds={'bbox_to_anchor':(2, 1.05), 'fontsize':12, 
+        #                                                 'title': "Counties climate ready \n at different percentiles",
+        #                                                 'title_fontsize':12})
+        if i == 1:
             CBWcounties.plot(column = variable, cmap=plt.cm.get_cmap(cmap_curr), linewidth=0.8, ax=axs[i], edgecolor='0.8', categorical=True,
-                             legend = True, legend_kwds={'bbox_to_anchor':(2, 1.05), 'fontsize':12, 
+                             legend = True, legend_kwds={'bbox_to_anchor':(3.3, 1.05), 'fontsize':12, 
                                                          'title': "Counties climate ready \n at different percentiles",
                                                          'title_fontsize':12})
         else:
