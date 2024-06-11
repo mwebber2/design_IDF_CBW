@@ -517,7 +517,7 @@ for i in range(len(col_listwgrey)):
 
 #method for plotting multiple maps at the same time
 def multiplemaps(listname, titletosave): #with shared legend
-    fig, axs = plt.subplots(2, 3, figsize = (11, 7))
+    fig, axs = plt.subplots(2, 3, figsize = (10, 8.8))
     axs = axs.flatten()
     #vmin, vmax = 0.0, 1.0
     for i in range(len(RP_list)): #6 RPs
