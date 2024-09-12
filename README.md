@@ -35,7 +35,7 @@ Maps: as generated in the `maps` folder.
 
 Tables and other figures representing all counties: as generated in each strategy's folder.
 - Tables representing precipitation depth associated with each strategy. Output file format is csv. The first column being the counties in the study area and several other columns for different return periods (2-yr, 5-yr, 10-yr, 25-yr, 50-yr, 100-yr). Each strategy has:
-	- three files representing present-day precipitation depths for the median, upper confidence interval (max) and lower confidence interval (short): (`output_atlas_CBW.csv`, `output_atlas_min.csv`, `output_atlas_max.csv`).
+	- three files representing present-day precipitation depths for the median, upper confidence interval (max) and lower confidence interval (min): (`output_atlas_CBW.csv`, `output_atlas_min.csv`, `output_atlas_max.csv`).
 	- four files representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): (`output_45short.csv`, `output_45long.csv`, `output_85short.csv`, `output_85long.csv`).
 - Tables representing climate factor of safety associated with each strategy. Output file format is csv. The first column being the counties in the study area and several other columns for different return periods (2-yr, 5-yr, 10-yr, 25-yr, 50-yr, 100-yr). Each strategy has:
 	- four files representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `output_frac_45short.csv`, `output_frac_45long.csv`, `output_frac_85short.csv`, `output_frac_85long.csv`).
