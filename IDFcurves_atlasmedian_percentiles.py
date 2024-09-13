@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 #import os
 import requests 
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
-import joypy
+#import joypy
 import geopandas as gpd
 
 #to run this code, need a folder (path) with the following files:
