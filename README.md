@@ -22,6 +22,7 @@ scipy >= 1.7.1
 
 ### Notes for running scripts
 Each Python script can be run independently, or all of the scripts can be run from `IDFcurves_main.py`.
+You will need to change the user defined variables named `path` and `path_main` to refer to your local directories.
 
 ## Output
 General files: in the main folder
