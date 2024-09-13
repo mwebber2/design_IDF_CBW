@@ -73,7 +73,7 @@ After cloning this repository, the outputs described above will be available in 
 
 ### Examples of figures generated as output for uncertainty analysis:
 
-![Example percentile map](atlasCI_percentiles/percentilemap_RCP45_2020-2070.png)
+![Example percentile map](atlasmedian_percentiles/percentilemap_RCP45_2020-2070.png)
 
 ## Acknowledgements
 
