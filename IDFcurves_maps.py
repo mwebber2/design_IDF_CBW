@@ -164,7 +164,7 @@ def multiplemaps_byRP_10paneldiff(outdf, outputrcp1, outputrcp2, t1, t2, legendt
     #cbar_ax = fig.add_axes([0.125, 0.52, 0.535, 0.04]) #specify location of the colorbar
     cbar_ax = fig.add_axes([0.125, 0, 0.535, 0.04]) #specify location of the colorbar
     cbar = fig.colorbar(sm1, cax = cbar_ax, orientation = "horizontal", extend = "min")#, extendrect = "True")
-    cbar.set_label(label = "Stormwater Infrastructure Climate Factor of Safety (" + legendtitle + ")", size=16)#, weight='bold')
+    cbar.set_label(label = "Stormwater Infrastructure Climate Readiness Factor (" + legendtitle + ")", size=16)#, weight='bold')
     cbar.ax.tick_params(labelsize=14) 
     CBWcounties.loc[:, "RCP_2020-2070"] = outputrcp1
     CBWcounties.loc[:, "RCP_2050-2100"] = outputrcp2
@@ -230,7 +230,7 @@ def multiplemaps_byRP_10paneldiff_100(outdf, outputrcp1, outputrcp2, t1, t2, leg
     #cbar_ax = fig.add_axes([0.125, 0.52, 0.535, 0.04]) #specify location of the colorbar
     cbar_ax = fig.add_axes([0.125, 0, 0.535, 0.04]) #specify location of the colorbar
     cbar = fig.colorbar(sm1, cax = cbar_ax, orientation = "horizontal", extend = "min")#, extendrect = "True")
-    cbar.set_label(label = "Stormwater Infrastructure Climate Factor of Safety (" + legendtitle + ")", size=16)#, weight='bold')
+    cbar.set_label(label = "Stormwater Infrastructure Climate Readiness Factor (" + legendtitle + ")", size=16)#, weight='bold')
     cbar.ax.tick_params(labelsize=14) 
     CBWcounties.loc[:, "RCP_2020-2070"] = outputrcp1
     CBWcounties.loc[:, "RCP_2050-2100"] = outputrcp2
