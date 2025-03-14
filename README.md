@@ -17,7 +17,7 @@ scipy >= 1.7.1
 
 ## Required input
 
-- Data downloaded from the Projected Intensity-Duration-Frequency (IDF) Curve Data Tool for the Chesapeake Bay Watershed and Virginia [webpage](https://midatlantic-idf.rcc-acis.org/). Format should be `csv`. For each script, you are required to specify the path where this csv file is located and confirm the locations where output will be saved.
+- Data downloaded from the Projected Intensity-Duration-Frequency (IDF) Curve Data Tool for the Chesapeake Bay Watershed and Virginia [webpage](https://midatlantic-idf.rcc-acis.org/). Format should be `csv`, file names should be `CBP_data_rcp*.csv`. For each script, you are required to specify the path where this csv file is located and confirm the locations where output will be saved.
 - Data needed for mapping final results (shapefiles for the study area, etc.) are included with this repository.
 
 ### Notes for running scripts
@@ -41,9 +41,9 @@ Tables and other figures representing all counties: as generated in each strateg
 - Tables representing climate factor of safety (also known as climate resadiness factor) associated with each strategy. Output file format is csv. The first column being the counties in the study area and several other columns for different return periods (2-yr, 5-yr, 10-yr, 25-yr, 50-yr, 100-yr). Each strategy has:
 	- four files representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `output_frac_45short.csv`, `output_frac_45long.csv`, `output_frac_85short.csv`, `output_frac_85long.csv`).
 - Boxplots representing fractional difference between strategy and projected precipitation  for all 321 counties, for each return period. Each strategy has:
-	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long).
+	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `RCP45_short.png`, `RCP_45long.png`, `RCP85short.png`, `RCP85long.png`).
 - Boxplots representing stormwater climate factors of safety (FS) for all 321 counties, for each return period. Each strategy has:
-	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long).
+	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `RCP45_short_FS.png`, `RCP_45long_FS.png`, `RCP85short_FS.png`, `RCP85long_FS.png`).
 
 Figures representing each county (example for Allegheny County): generated in the `individualcounties` folder:
 - IDF curves for RCP 4.5 2020-2070 and 2050-2100 with uncertainty bands for projected precipitation
