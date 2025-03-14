@@ -698,13 +698,26 @@ for i in range(len(RP_list)):
     #xlabels_45l.append(RP_list[i] + " (N = " + str(count_45l[i]) + ")")
     xlabels_45l.append(RP_list[i] + "\n(" + str(int((count_45l[i]/len(county_centroids))*100)) + "%)")
 
+count_85s = countprotected(diff_allRP_percmin_RCP85_short)
+xlabels_85s = []
+for i in range(len(RP_list)):
+    #xlabels_45s.append(RP_list[i] + " (N = " + str(count_45s[i]) + ")")
+    xlabels_85s.append(RP_list[i] + "\n(" + str(int((count_85s[i]/len(county_centroids))*100)) + "%)")
+
+count_85l = countprotected(diff_allRP_percmin_RCP85_long)
+xlabels_85l = []
+for i in range(len(RP_list)):
+    #xlabels_45l.append(RP_list[i] + " (N = " + str(count_45l[i]) + ")")
+    xlabels_85l.append(RP_list[i] + "\n(" + str(int((count_85l[i]/len(county_centroids))*100)) + "%)")
+
+
 #fraction
 boxplots_counties(diff_allRP_percmin_RCP45_short, xlabels_45s, yaxislimits, 0, "Fractional Difference (-)", "RCP45_short.png")
 boxplots_counties(diff_allRP_percmin_RCP45_long, xlabels_45l, yaxislimits, 0, "Fractional Difference (-)", "RCP45_long.png")
-boxplots_counties(diff_allRP_percmin_RCP85_short, RP_list, yaxislimits, 0, "Fractional Difference (-)", "RCP85_short.png")
-boxplots_counties(diff_allRP_percmin_RCP85_long, RP_list, yaxislimits, 0, "Fractional Difference (-)", "RCP85_long.png")
+boxplots_counties(diff_allRP_percmin_RCP85_short, xlabels_85s, yaxislimits, 0, "Fractional Difference (-)", "RCP85_short.png")
+boxplots_counties(diff_allRP_percmin_RCP85_long, xlabels_85l, yaxislimits, 0, "Fractional Difference (-)", "RCP85_long.png")
 #FS
 boxplots_counties(FS_allRP_percmin_RCP45_short, xlabels_45s, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP45_short_FS.png")
 boxplots_counties(FS_allRP_percmin_RCP45_long, xlabels_45l, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP45_long_FS.png")
-boxplots_counties(FS_allRP_percmin_RCP85_short, RP_list, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP85_short_FS.png")
-boxplots_counties(FS_allRP_percmin_RCP85_long, RP_list, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP85_long_FS.png")
+boxplots_counties(FS_allRP_percmin_RCP85_short, xlabels_85s, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP85_short_FS.png")
+boxplots_counties(FS_allRP_percmin_RCP85_long, xlabels_85l, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP85_long_FS.png")
