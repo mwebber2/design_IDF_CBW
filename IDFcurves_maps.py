@@ -378,5 +378,7 @@ titletosave_list = [path_to_save + "2yr_fractionmap+diff_",
                     path_to_save + "25yr_fractionmap+diff_",
                     path_to_save + "50yr_fractionmap+diff_",
                     path_to_save + "100yr_fractionmap+diff_"]
-importandmapoutput_byRP_10paneldiff(pathlist, "output_percmin_85short.csv", "output_percmin_85long.csv", "output_85short.csv", "output_85long.csv", titletosave_list)
-importandmapoutput_byRP_10paneldiff(pathlist, "output_percmin_45short.csv", "output_percmin_45long.csv", "output_45short.csv", "output_45long.csv", titletosave_list)
+#importandmapoutput_byRP_10paneldiff(pathlist, "output_percmin_85short.csv", "output_percmin_85long.csv", "output_85short.csv", "output_85long.csv", titletosave_list)
+#importandmapoutput_byRP_10paneldiff(pathlist, "output_percmin_45short.csv", "output_percmin_45long.csv", "output_45short.csv", "output_45long.csv", titletosave_list)
+importandmapoutput_byRP_10paneldiff(pathlist, "output_frac_85short.csv", "output_frac_85long.csv", "output_85short.csv", "output_85long.csv", titletosave_list)
+importandmapoutput_byRP_10paneldiff(pathlist, "output_frac_45short.csv", "output_frac_45long.csv", "output_45short.csv", "output_45long.csv", titletosave_list)
