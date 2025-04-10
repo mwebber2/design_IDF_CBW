@@ -14,7 +14,7 @@ import numpy as np
 #import math
 import statistics as st
 import matplotlib.pyplot as plt
-#import os
+import os
 import requests 
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 #import joypy
@@ -53,10 +53,17 @@ def webscrape_atlas14(path, grid, lat, lon):
 
 #%% paths and other user defined variables
 
-path = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/atlasmedian_percentiles/"
 path_main = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/"
+path = path_main + r"atlasmedian_percentiles/"
 path_to_save = path + r"results/"
 path_to_save_atlas = path_main + r"atlas14/"
+
+if not os.path.exists(path):
+    os.makedirs(path)
+if not os.path.exists(path_to_save):
+    os.makedirs(path_to_save)
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
 
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
 RP_list = ["2-yr", "5-yr", "10-yr", "25-yr", "50-yr", "100-yr"]
@@ -344,7 +351,7 @@ for c in range(len(county_centroids)):
             r_list.append(output[o][a])
         r_master.append(r_list) #6 lists, each list = 4 values (one for each scenario)
     
-    for r in range(len(r_master)): #for each RP #TODO update this section for other strategies
+    for r in range(len(r_master)): #for each RP #NB update this section for other strategies
         diff_min = (atlas_median[r] - min(r_master[r]))/atlas_median[r]
         perc_diff_min_all.append(diff_min)
         if diff_min >= 0: #check if atlas 14 >= any of the depths
