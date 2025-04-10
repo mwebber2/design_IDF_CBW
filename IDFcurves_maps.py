@@ -15,7 +15,7 @@ import numpy as np
 import statistics as st
 import matplotlib.pyplot as plt
 import scipy.stats as stats
-#import os
+import os
 #import requests 
 import geopandas as gpd
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
@@ -31,6 +31,19 @@ path4 = path_main + r"atlasupRPCI/"
 path_to_save = path_main + r"maps/"
 path_to_save_atlas = path_main + r"atlas14/"
 
+if not os.path.exists(path1):
+    os.makedirs(path1)
+if not os.path.exists(path2):
+    os.makedirs(path2)
+if not os.path.exists(path3):
+    os.makedirs(path3)
+if not os.path.exists(path4):
+    os.makedirs(path4)
+if not os.path.exists(path_to_save):
+    os.makedirs(path_to_save)
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
+    
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
 RP_list = ["2-yr", "5-yr", "10-yr", "25-yr", "50-yr", "100-yr"]
 ptiles = ["mean", "min", "10th ptile", "25th ptile", "50th ptile", "75th ptile", "90th ptile", "max"]
