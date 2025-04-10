@@ -14,7 +14,7 @@ import numpy as np
 #import math
 #import statistics as st
 import matplotlib.pyplot as plt
-#import os
+import os
 import requests 
 #import joypy
 
@@ -57,6 +57,15 @@ path_to_save = path + r"results/"
 path_to_save_atlas = path_main + r"atlas14/"
 path_to_save_graphs = path_main + r"individualcounties/"
 
+if not os.path.exists(path):
+    os.makedirs(path)
+if not os.path.exists(path_to_save):
+    os.makedirs(path_to_save)
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
+if not os.path.exists(path_to_save_graphs):
+    os.makedirs(path_to_save_graphs)
+    
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
 RP_list = ["2-yr", "5-yr", "10-yr", "25-yr", "50-yr", "100-yr"]
 ptiles = ["mean", "min", "10th ptile", "25th ptile", "50th ptile", "75th ptile", "90th ptile", "max"]
@@ -397,7 +406,8 @@ for c in range(len(county_centroids)):
             titlestring = "RCP " + RCP[o][3] + "." + RCP[o][4] + " " + RCP[o][-9:] #e.g. rcp45_2020-2070
             axs[0].set_title(grid_test[:-3] + ", " + grid_test[-2:] + " (" + titlestring + ")", fontsize = 16)
             #plt.savefig(path_to_save_graphs + r"ridgeline_like_plots/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
-            plt.savefig(path_to_save_graphs + r"plotsforeachscenario/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
+            #plt.savefig(path_to_save_graphs + r"plotsforeachscenario/" + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
+            plt.savefig(path_to_save_graphs + grid_test + "_" + RCP[o] + ".png", bbox_inches = "tight")
             plt.close()
 
 #ridgeline with depths for all counties
