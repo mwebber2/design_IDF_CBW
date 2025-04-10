@@ -14,6 +14,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import os
 import geopandas as gpd
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -23,6 +24,9 @@ t0 = time.perf_counter() #seconds
 #user-defined paths
 path_main = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/"
 path_to_save_atlas = path_main + r"atlas14/"
+
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
 
 #pre-defined lists
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
