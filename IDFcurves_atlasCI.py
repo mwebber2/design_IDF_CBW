@@ -14,7 +14,7 @@ import numpy as np
 #import math
 #import statistics as st
 import matplotlib.pyplot as plt
-#import os
+import os
 import requests 
 #import joypy
 #import geopandas as gpd
@@ -56,6 +56,14 @@ path_main = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/"
 path = path_main + r"atlasCI/"
 path_to_save = path + r"results/"
 path_to_save_atlas = path_main + r"atlas14/"
+
+
+if not os.path.exists(path):
+    os.makedirs(path)
+if not os.path.exists(path_to_save):
+    os.makedirs(path_to_save)
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
 
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
 RP_list = ["2-yr", "5-yr", "10-yr", "25-yr", "50-yr", "100-yr"]
