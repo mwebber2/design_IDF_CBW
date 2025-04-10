@@ -17,7 +17,7 @@ scipy >= 1.7.1
 
 ## Required input
 
-- Data downloaded from the Projected Intensity-Duration-Frequency (IDF) Curve Data Tool for the Chesapeake Bay Watershed and Virginia [webpage](https://midatlantic-idf.rcc-acis.org/). There should be four files (`CBP_data_rcp*.csv`). For each script, you are required to specify the path where thess csv files are located and confirm the locations where output will be saved.
+- Data downloaded from the Projected Intensity-Duration-Frequency (IDF) Curve Data Tool for the Chesapeake Bay Watershed and Virginia [webpage](https://midatlantic-idf.rcc-acis.org/). There should be four files (`CBP_data_rcp*.csv`). These files include the median, minimum, and maximum depth for each return period, and have been separated into separate files for the sake of this analysis. There should be four median files (`median_rcp*.csv`), for maximum files (`max_rcp*.csv`), and four minimum files (`min_rcp*.csv`). For each script, you are required to specify the path where these csv files are located and confirm the locations where output will be saved.
 - Data needed for mapping final results (shapefiles for the study area, etc.) are included with this repository.
 
 ### Notes for running scripts
