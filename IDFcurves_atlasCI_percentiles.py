@@ -14,7 +14,7 @@ import numpy as np
 #import math
 import statistics as st
 import matplotlib.pyplot as plt
-#import os
+import os
 import requests 
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 #import joypy
@@ -53,10 +53,17 @@ def webscrape_atlas14(path, grid, lat, lon):
 
 #%% paths and other user defined variables
 
-path = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/atlasCI_percentiles/"
 path_main = r"/Users/webbe/Box/Marissa's Research/IDF Curves/IDFcurve_code/"
+path = r"atlasCI_percentiles/"
 path_to_save = path + r"results/"
 path_to_save_atlas = path_main + r"atlas14/"
+
+if not os.path.exists(path):
+    os.makedirs(path)
+if not os.path.exists(path_to_save):
+    os.makedirs(path_to_save)
+if not os.path.exists(path_to_save_atlas):
+    os.makedirs(path_to_save_atlas)
 
 RCP = ["rcp45_2020-2070", "rcp45_2050-2100", "rcp85_2020-2070", "rcp85_2050-2100"]
 RP_list = ["2-yr", "5-yr", "10-yr", "25-yr", "50-yr", "100-yr"]
@@ -276,7 +283,7 @@ for c in range(len(county_centroids)):
     def cf_ptile(p, j, i): #method creates the output depths for the 6 return periods
         #for percentile p, RCP j, and county i
         cf = cf_masterlist[p][j].iloc[i][5:]
-        out = np.multiply(np.array(atlas_median), np.array(cf)) #TODO don't change this for other strategies?
+        out = np.multiply(np.array(atlas_median), np.array(cf)) #NB don't change this for other strategies?
         return out
     
     for j in range(len(cf_masterlist[0])): #all 4 RCPs
@@ -344,7 +351,7 @@ for c in range(len(county_centroids)):
             r_list.append(output[o][a])
         r_master.append(r_list) #6 lists, each list = 4 values (one for each scenario)
     
-    for r in range(len(r_master)): #for each RP #TODO update this section for other strategies
+    for r in range(len(r_master)): #for each RP #NB update this section for other strategies
         diff_min = (atlas_upper[r] - min(r_master[r]))/atlas_upper[r]
         perc_diff_min_all.append(diff_min)
         if diff_min >= 0: #check if atlas 14 >= any of the depths
@@ -517,7 +524,7 @@ for i in range(len(col_listwgrey)):
 
 #method for plotting multiple maps at the same time
 def multiplemaps(listname, titletosave): #with shared legend
-    fig, axs = plt.subplots(2, 3, figsize = (10, 8.8)) #TODO does making this figure smaller help the font in the table?
+    fig, axs = plt.subplots(2, 3, figsize = (10, 8.8)) #check if making this figure smaller help the font in the table?
     axs = axs.flatten()
     #vmin, vmax = 0.0, 1.0
     for i in range(len(RP_list)): #6 RPs
