@@ -418,7 +418,8 @@ for i in range(len(diff_allRP_percmax_all)):
     diff_allRP_percmax_pos.append(RP_pos)
     diff_allRP_percmax_neg.append(RP_neg)
     
-#convert all the fractions to percentages (i.e. add 1+fraction)
+#convert all the fractions to factors of safety (i.e. add 1+fraction)
+#with if statement that factors cannot be < 1.0
 def fractiontoFS(listoflists):
     FS = []    
     for l in listoflists:        
@@ -431,6 +432,16 @@ def fractiontoFS(listoflists):
         FS.append(fs) #output a new df
     return FS
 
+#convert all fractions to a percentage (i.e. add 1+fraction)
+def fractiontoCRF(listoflists):
+    FS = []    
+    for l in listoflists:        
+        fs = []
+        for i in l:
+            fs.append(1+i)
+        FS.append(fs) #output a new df
+    return FS
+
 FS_allRP_percmin_all = fractiontoFS(diff_allRP_percmin_all)
 FS_allRP_percmax_all = fractiontoFS(diff_allRP_percmax_all)
 FS_allRP_percmin_pos = fractiontoFS(diff_allRP_percmin_pos)
@@ -440,6 +451,11 @@ FS_allRP_percmin_RCP45_short = fractiontoFS(diff_allRP_percmin_RCP45_short)
 FS_allRP_percmin_RCP45_long = fractiontoFS(diff_allRP_percmin_RCP45_long)
 FS_allRP_percmin_RCP85_short = fractiontoFS(diff_allRP_percmin_RCP85_short)
 FS_allRP_percmin_RCP85_long = fractiontoFS(diff_allRP_percmin_RCP85_long)
+#also calculate for CRF < 1
+CRF_allRP_percmin_RCP45_short = fractiontoCRF(diff_allRP_percmin_RCP45_short)
+CRF_allRP_percmin_RCP45_long = fractiontoCRF(diff_allRP_percmin_RCP45_long)
+CRF_allRP_percmin_RCP85_short = fractiontoCRF(diff_allRP_percmin_RCP85_short)
+CRF_allRP_percmin_RCP85_long = fractiontoCRF(diff_allRP_percmin_RCP85_long)
 
 #methods for plotting
 def boxplots_counties(data, xlab, ylimits, hline, ylabel, titletosave):
@@ -558,6 +574,11 @@ boxplots_counties(diff_allRP_percmin_RCP45_short, xlabels_45s, yaxislimits, 0, "
 boxplots_counties(diff_allRP_percmin_RCP45_long, xlabels_45l, yaxislimits, 0, "Fractional Difference (-)", "RCP45_long.png")
 boxplots_counties(diff_allRP_percmin_RCP85_short, xlabels_85s, yaxislimits, 0, "Fractional Difference (-)", "RCP85_short.png")
 boxplots_counties(diff_allRP_percmin_RCP85_long, xlabels_85l, yaxislimits, 0, "Fractional Difference (-)", "RCP85_long.png")
+#fraction + 1
+boxplots_counties(CRF_allRP_percmin_RCP45_short, xlabels_45s, tuple([item + 1 for item in yaxislimits]), 1, "Climate Factor of Safety (-)", "RCP45_short_CRF.png")
+boxplots_counties(CRF_allRP_percmin_RCP45_long, xlabels_45l, tuple([item + 1 for item in yaxislimits]), 1, "Climate Factor of Safety (-)", "RCP45_long_CRF.png")
+boxplots_counties(CRF_allRP_percmin_RCP85_short, xlabels_85s, tuple([item + 1 for item in yaxislimits]), 1, "Climate Factor of Safety (-)", "RCP85_short_CRF.png")
+boxplots_counties(CRF_allRP_percmin_RCP85_long, xlabels_85l, tuple([item + 1 for item in yaxislimits]), 1, "Climate Factor of Safety (-)", "RCP85_long_CRF.png")
 #FS
 boxplots_counties(FS_allRP_percmin_RCP45_short, xlabels_45s, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP45_short_FS.png")
 boxplots_counties(FS_allRP_percmin_RCP45_long, xlabels_45l, yaxislimits_FS, 1, "Climate Factor of Safety (-)", "RCP45_long_FS.png")
