@@ -42,6 +42,8 @@ Tables and other figures representing all counties: as generated in each strateg
 	- four files representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `output_frac_45short.csv`, `output_frac_45long.csv`, `output_frac_85short.csv`, `output_frac_85long.csv`).
 - Boxplots representing fractional difference between strategy and projected precipitation  for all 321 counties, for each return period. Each strategy has:
 	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `RCP45_short.png`, `RCP_45long.png`, `RCP85short.png`, `RCP85long.png`).
+- Boxplots representing stormwater climate resilience factors for all 321 counties, for each return period. Each strategy has:
+	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `RCP45_short_CRF.png`, `RCP_45long_CRF.png`, `RCP85short_CRF.png`, `RCP85long_CRF.png`).
 - Boxplots representing stormwater climate factors of safety (FS) for all 321 counties, for each return period. Each strategy has:
 	- four plots representing potential future precipitation depths for RCP 4.5 and RCP 8.5, for 2020-2070 (short) and 2050-2100 (long): ( `RCP45_short_FS.png`, `RCP_45long_FS.png`, `RCP85short_FS.png`, `RCP85long_FS.png`).
 
@@ -62,6 +64,8 @@ After cloning this repository and running `IDFcurves_main.py`, the outputs descr
 ![Example choropleth map](maps/25yr_fractionmap+diff_RCP45.png)
 
 ![Example boxplot fractional difference](atlasmedian/RCP45_long.png)
+
+![Example boxplot climate factor of safety](atlasmedian/RCP45_long_CRF.png)
 
 ![Example boxplot climate factor of safety](atlasmedian/RCP45_long_FS.png)
 
